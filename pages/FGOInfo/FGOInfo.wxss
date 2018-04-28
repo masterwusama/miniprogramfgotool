@@ -1,0 +1,26 @@
+/* pages/FGOInfo/FGOInfo.wxss */
+.image_frame{
+  width: 20%;
+  height: 180rpx;
+  float:left; 
+  background-color: #eeeeee;
+}
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
+
+
+.searchselect{
+  width:50%;
+}
+
+

@@ -1,0 +1,111 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+/* 设置不透明 */
+.weui-navbar__item{
+  background-color: #FFFFFF;
+}
+
+.weui-tab__content{
+  padding-top: 0px;
+}
+
+.image_frame{
+  width: 180rpx;
+  height: 190rpx;
+  margin: 10rpx auto;
+  float:left; 
+  background-color: #eeeeee;
+}
+
+.weui-form-preview__value_in-hd{
+  text-align: left;
+}
+/* 技能图片 */
+.image_skill{
+  width: 90rpx;
+  height: 90rpx;
+
+  background-color: #eeeeee;
+}
+/* 技能大描述 */
+.skilldes{
+  text-align: left;
+  height: 50rpx;
+  line-height:45rpx;
+   font-size:16px;
+}
+
+.bjdes{
+  text-align: left;
+  vertical-align: center;
+  height: 50rpx;
+  line-height:50rpx;
+  font-size:16px;
+}
+
+/* 技能分描述及固有等级cd*/
+.skilldest{
+  text-align: left;
+  height: 50rpx;
+  line-height:45rpx;
+  font-size:12px;
+}
+
+/* .skilldest1{
+  text-align: left;
+  height: 50rpx;
+  line-height:45rpx;
+  font-size:13px;
+} */
+/* 技能分描述数值参数整体*/
+.skilldestval{
+  text-align: left;
+  height: 50rpx;
+  line-height:45rpx;
+  font-size:10px;
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px
+}
+/* 技能分描述数值参数整体 内容*/
+.skilldestvalcont{
+  text-align: center;
+}
+
+.bjvalcontent{
+  text-align: center;
+  border: lightgrey;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px
+}
+
+.para1{
+  font-size: 32rpx;
+}
+.para2{
+  font-size: 28rpx;
+}
+
+.weui-grid {
+  position:relative;
+  float:left;
+  height:270rpx;
+  padding:15px 15px;
+  width:33.33333333%;
+  box-sizing:border-box;
+  border-right:1rpx solid #d9d9d9;
+  border-bottom:1rpx solid #d9d9d9;
+}
+
