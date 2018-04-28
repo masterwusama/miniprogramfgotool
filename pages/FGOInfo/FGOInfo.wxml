@@ -3,13 +3,13 @@
 
         <view class="weui-flex">
           <view class="placeholder weui-flex__item searchselect">   
-            <picker bindchange="bindPickerClassChange" value="{{indexClass}}" range="{{arrayClass}}" class="">
-                <button type="default">Class</button>
+            <picker bindchange="bindPickerClassChange" value="{{indexClass}}" range="{{arrayClass}}">
+                <button type="default">{{pickertextlist[0]}}</button>
             </picker>
           </view>
           <view class="placeholder weui-flex__item searchselect">   
-            <picker bindchange="bindPickerArtistChange" value="{{indexArtist}}" range="{{arrayArtist}}" class="">
-                <button type="default">Artist</button>
+            <picker bindchange="bindPickerArtistChange" value="{{indexArtist}}" range="{{arrayArtist}}">
+                <button type="default">{{pickertextlist[1]}}</button>
             </picker>
           </view>
         </view>

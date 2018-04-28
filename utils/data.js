@@ -2049,31 +2049,31 @@ function getcommomdata() {
     "Region": "欧洲全域",
     "Attributes": "混沌・中庸",
   },
-  {
-    "ID": "83",
-    "NAME": "所罗门",
-    "NAME_EN": "Solomon",
-    "Avatar": "083",
-    "STAR": "5",
-    "CLASS": "Grand Caster",
-    "LVMAX4_HP": "0",
-    "LVMAX4_ATK": "0",
-    "ILLUST": "武内崇",
-    "CV": "——",
-    "GLUTEN": "E",
-    "DURABLE": "E",
-    "AGILE": "B",
-    "MAGIC": "A++",
-    "LUCKY": "A++",
-    "TREASURE": "A++",
-    "Property": "人型,从者（被EA克制）,天/地从者",
-    "Camp": "天",
-    "Height": "",
-    "Weight": "",
-    "Origin": "",
-    "Region": "",
-    "Attributes": "秩序・善",
-  },
+  // {
+  //   "ID": "83",
+  //   "NAME": "所罗门",
+  //   "NAME_EN": "Solomon",
+  //   "Avatar": "083",
+  //   "STAR": "5",
+  //   "CLASS": "Grand Caster",
+  //   "LVMAX4_HP": "0",
+  //   "LVMAX4_ATK": "0",
+  //   "ILLUST": "武内崇",
+  //   "CV": "——",
+  //   "GLUTEN": "E",
+  //   "DURABLE": "E",
+  //   "AGILE": "B",
+  //   "MAGIC": "A++",
+  //   "LUCKY": "A++",
+  //   "TREASURE": "A++",
+  //   "Property": "人型,从者（被EA克制）,天/地从者",
+  //   "Camp": "天",
+  //   "Height": "",
+  //   "Weight": "",
+  //   "Origin": "",
+  //   "Region": "",
+  //   "Attributes": "秩序・善",
+  // },
   {
     "ID": "84",
     "NAME": "阿周那",
@@ -5128,18 +5128,58 @@ function getcommomdata() {
   return clist;
 }
 var cdata = getcommomdata()
+//搜索栏参数1 artist参数2 职介参数3 
 function searchdata(content) {
+
+  var content1 = content[0];
+  var content2 = content[1];
+  var content3 = content[2];
   //var namelist = cdata.find(function (tempindex) { return tempindex.NAME.indexOf(content)>=0 });
   var namelist = [];
-  for(var i = 0; i < cdata.length;i++){
-    if(cdata[i].NAME.indexOf(content) >= 0){
-      namelist.push(cdata[i]);
+  var tempsearchdata = cdata;
+  //判断有没有做过筛选
+  //姓名
+  var flag = false;
+  if (content1 != undefined && content1 != ""){
+    for (var i = 0; i < tempsearchdata.length;i++){
+      if (tempsearchdata[i].NAME.indexOf(content1) >= 0){
+        namelist.push(tempsearchdata[i]);
+      }
     }
+    flag = true;
+  }
+  //Artist
+  if (flag){
+    tempsearchdata = namelist;
+    namelist = [];
+  }
+  if (content2 != undefined && content2 != "") {
+    for (var i = 0; i < tempsearchdata.length; i++) {
+      if (tempsearchdata[i].ILLUST == content2) {
+        namelist.push(tempsearchdata[i]);
+      }
+    }
+    flag = true;
+  }
+  //职介
+  if (flag) {
+    tempsearchdata = namelist;
+    namelist=[];
+  }
+  if (content3 != undefined && content3 != "") {
+    for (var i = 0; i < tempsearchdata.length; i++) {
+      if (tempsearchdata[i].CLASS == content3) {
+        namelist.push(tempsearchdata[i]);
+      }
+    }
+    flag = true;
   }
 
-
-  return namelist
-  
+  if (flag){
+    return namelist
+  }else{
+    return cdata;
+  }
 }
 
 function getsingledata(id){
