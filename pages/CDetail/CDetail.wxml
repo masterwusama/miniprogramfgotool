@@ -264,7 +264,7 @@
                         </view>
                         <view class="bjdes">{{insData.T_NAME}}</view>
                     </view>
-                    <view class="weui-flex__item" wx:for="{{insData.T_EFFECT}}" wx:for-index="index" wx:for-item="itemname">
+                    <view class="weui-flex__item" wx:for="{{insData.T_Text_Arr}}" wx:for-index="index" wx:for-item="itemname">
                         <view class="skilldest">{{itemname}}</view>
                         
                           <view  class="weui-flex ">

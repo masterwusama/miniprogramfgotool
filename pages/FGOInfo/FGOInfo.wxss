@@ -20,7 +20,16 @@
 
 
 .searchselect{
-  width:50%;
+  width:25%;
+  font-size: 10rpx;
+  max-height: 60rpx;
 }
 
+button[type=default]{
+  font-size: 25rpx;
+}
+
+.weui-search-bar{
+  padding:4px 5px;
+}
 

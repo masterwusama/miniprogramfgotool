@@ -133,7 +133,7 @@ function getcommomdata() {
     "CLASS": "Saber",
     "LVMAX4_HP": "14165",
     "LVMAX4_ATK": "8181",
-    "ILLUST": "近卫乙嗣",
+    "ILLUST": "近衛乙嗣",
     "CV": "诹访部顺一",
     "GLUTEN": "B+",
     "DURABLE": "A",
@@ -233,7 +233,7 @@ function getcommomdata() {
     "CLASS": "Saber",
     "LVMAX4_HP": "13256",
     "LVMAX4_ATK": "8765",
-    "ILLUST": "森山大辅",
+    "ILLUST": "森山大輔",
     "CV": "斋藤千和",
     "GLUTEN": "A",
     "DURABLE": "B",
@@ -508,7 +508,7 @@ function getcommomdata() {
     "CLASS": "Lancer",
     "LVMAX4_HP": "7959",
     "LVMAX4_ATK": "6583",
-    "ILLUST": "缟うどん",
+    "ILLUST": "縞うどん",
     "CV": "三木真一郎",
     "GLUTEN": "B",
     "DURABLE": "A",
@@ -633,7 +633,7 @@ function getcommomdata() {
     "CLASS": "Rider",
     "LVMAX4_HP": "10130",
     "LVMAX4_ATK": "6289",
-    "ILLUST": "苍月タカオ",
+    "ILLUST": "蒼月タカオ",
     "CV": "斋藤千和",
     "GLUTEN": "C",
     "DURABLE": "B+",
@@ -833,7 +833,7 @@ function getcommomdata() {
     "CLASS": "Caster",
     "LVMAX4_HP": "8080",
     "LVMAX4_ATK": "5798",
-    "ILLUST": "近卫乙嗣",
+    "ILLUST": "近衛乙嗣",
     "CV": "稻田彻",
     "GLUTEN": "E",
     "DURABLE": "E",
@@ -1483,7 +1483,7 @@ function getcommomdata() {
     "CLASS": "Archer",
     "LVMAX4_HP": "14553",
     "LVMAX4_ATK": "11107",
-    "ILLUST": "I-IV",
+    "ILLUST": "Ⅰ-Ⅳ",
     "CV": "神奈延年&泽城美雪",
     "GLUTEN": "D",
     "DURABLE": "C",
@@ -1633,7 +1633,7 @@ function getcommomdata() {
     "CLASS": "Rider",
     "LVMAX4_HP": "11286",
     "LVMAX4_ATK": "9029",
-    "ILLUST": "I-IV",
+    "ILLUST": "Ⅰ-Ⅳ",
     "CV": "野中蓝&川澄绫子",
     "GLUTEN": "C",
     "DURABLE": "C",
@@ -1908,7 +1908,7 @@ function getcommomdata() {
     "CLASS": "Archer",
     "LVMAX4_HP": "13825",
     "LVMAX4_ATK": "11781",
-    "ILLUST": "なまにくATK（ニトロプラス）",
+    "ILLUST": "なまにくATK(ニトロプラス)",
     "CV": "稻田彻",
     "GLUTEN": "D",
     "DURABLE": "C",
@@ -1983,7 +1983,7 @@ function getcommomdata() {
     "CLASS": "Caster",
     "LVMAX4_HP": "10887",
     "LVMAX4_ATK": "5996",
-    "ILLUST": "I-IV",
+    "ILLUST": "Ⅰ-Ⅳ",
     "CV": "稻田彻",
     "GLUTEN": "B++",
     "DURABLE": "B++",
@@ -3658,7 +3658,7 @@ function getcommomdata() {
     "CLASS": "Avenger",
     "LVMAX4_HP": "10197",
     "LVMAX4_ATK": "10706",
-    "ILLUST": "下越 ",
+    "ILLUST": "下越",
     "CV": "浅川悠",
     "GLUTEN": "A++",
     "DURABLE": "A++",
@@ -3858,7 +3858,7 @@ function getcommomdata() {
     "CLASS": "Berserker",
     "LVMAX4_HP": "14175",
     "LVMAX4_ATK": "11113",
-    "ILLUST": " BUNBUN",
+    "ILLUST": "BUNBUN",
     "CV": "川澄绫子",
     "GLUTEN": "A",
     "DURABLE": "B",
@@ -4108,7 +4108,7 @@ function getcommomdata() {
     "CLASS": "Saber",
     "LVMAX4_HP": "11753",
     "LVMAX4_ATK": "9544",
-    "ILLUST": "たけのこ星人 ",
+    "ILLUST": "たけのこ星人",
     "CV": "东山奈央",
     "GLUTEN": "D",
     "DURABLE": "D",
@@ -5128,12 +5128,13 @@ function getcommomdata() {
   return clist;
 }
 var cdata = getcommomdata()
-//搜索栏参数1 artist参数2 职介参数3 
+//搜索栏参数1 artist参数2 职介参数3  CV参数4
 function searchdata(content) {
 
   var content1 = content[0];
   var content2 = content[1];
   var content3 = content[2];
+  var content4 = content[3];
   //var namelist = cdata.find(function (tempindex) { return tempindex.NAME.indexOf(content)>=0 });
   var namelist = [];
   var tempsearchdata = cdata;
@@ -5159,7 +5160,9 @@ function searchdata(content) {
         namelist.push(tempsearchdata[i]);
       }
     }
-    flag = true;
+    flag = true
+  }else{
+    flag = false
   }
   //职介
   if (flag) {
@@ -5172,13 +5175,32 @@ function searchdata(content) {
         namelist.push(tempsearchdata[i]);
       }
     }
-    flag = true;
+    flag = true
+  }else{
+    flag = false
+  }
+
+
+  //CV
+  if (flag) {
+    tempsearchdata = namelist;
+    namelist = [];
+  }
+  if (content4 != undefined && content4 != "") {
+    for (var i = 0; i < tempsearchdata.length; i++) {
+      if (tempsearchdata[i].CV == content4) {
+        namelist.push(tempsearchdata[i]);
+      }
+    }
+    flag = true
+  } else {
+    flag = false
   }
 
   if (flag){
     return namelist
   }else{
-    return cdata;
+    return tempsearchdata;
   }
 }
 

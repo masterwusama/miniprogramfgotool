@@ -12,6 +12,14 @@
                 <button type="default">{{pickertextlist[1]}}</button>
             </picker>
           </view>
+          <view class="placeholder weui-flex__item searchselect">   
+            <picker bindchange="bindPickerCVChange" value="{{indexCV}}" range="{{arrayCV}}">
+                <button type="default">{{pickertextlist[2]}}</button>
+            </picker>
+          </view>
+          <view class="placeholder weui-flex__item searchselect">   
+                <button type="default" bindtap="reset">{{pickertextlist[3]}}</button>
+          </view>
         </view>
         <view class="weui-search-bar">
             <view class="weui-search-bar__form">

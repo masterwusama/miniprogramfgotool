@@ -56,7 +56,6 @@ page,
 /* 技能分描述及固有等级cd*/
 .skilldest{
   text-align: left;
-  height: 50rpx;
   line-height:45rpx;
   font-size:12px;
 }
@@ -70,7 +69,6 @@ page,
 /* 技能分描述数值参数整体*/
 .skilldestval{
   text-align: left;
-  height: 50rpx;
   line-height:45rpx;
   font-size:10px;
   border: lightgrey;
