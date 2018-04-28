@@ -5188,7 +5188,7 @@ function searchdata(content) {
   }
   if (content4 != undefined && content4 != "") {
     for (var i = 0; i < tempsearchdata.length; i++) {
-      if (tempsearchdata[i].CV == content4) {
+      if (tempsearchdata[i].CV.indexOf(content4)>=0) {
         namelist.push(tempsearchdata[i]);
       }
     }
